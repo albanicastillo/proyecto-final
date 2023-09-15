@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #dedede;
+  background-color: #031926;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+}
+
+.menu div {
+  display: flex;
+}
+
+.menu div i {
+  font-size: 18px;
+  padding-right: 20px;
+  color: #0B4D99;
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+}
+
+.buscar:hover {
+  cursor: pointer;
+}
+
+.playlist a i {
+  color: #B70F19;
+}
+
+.canciones {
+  width: 75%;
+  /* height: 80%; */
+  background-color: #171717;
+}
+
+.play-container {
+  padding: 50px 0 0 120px;
+  width: 70%;
+  background-color: #171717;
+}
+
+.play-container .play {
+  padding-right: 1rem;
+  padding-bottom: 40px;
+  font-size: 18px;
+  background-color: #171717;
+}
+
+.play-container div {
+  background-color: #171717;
+}
+
+.play-container .playsong {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#track-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+#track-list img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 10px;
+}
+
+.playsong i {
+  /* color: #B70F19; */
+  background-color: #171717;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 378px;
+  overflow: auto;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list div .name {
+  font-size: 12px;
+  background-color: #171717;
+}
+
+.list div .name:last-of-type {
+  font-size: 12px;
+  color: #707070;
+  background-color: #171717;
+
+}
+
+.reproduccion {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  padding: 0 70px;
+}
+
+.reproduccion .current {
+  width: 25%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.reproduccion .current img {
+  height: 70px;
+  border-radius: 100px;
+}
+
+.reproduccion .current .song h3 {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reproduccion .current i {
+  cursor: pointer;
+}
+
+.artist {
+  font-size: 10px;
+  color: #707070;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} 
+
+#barra {
+  padding: 0 30px;
+  width: 100%;
+}
+
+#barra .botones {
+  text-align: center;
+}
+
+#barra .botones i {
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.barra .tiempo {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reproduccion .minuto {
+  font-size: 11px;
+  padding: 0 15px;
+}
+
+#barra .barra .input {
+  position: relative;    
+  width: 70%;
+  height: 2px;
+  background: #707070;
+}
+
+#barra .barra .input input {
+  position: absolute;
+  width: 100%;
+  top: -7px;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+}
+
+#barra .barra .input .tiempo-barra {
+  position: absolute;    
+  background: #0B4D99;
+  width: 50%;
+  height: 100%;
+  top: 0;
+}
+
+#barra .barra .input .punto {
+  position: absolute;    
+  width: 5px;
+  height: 5px;
+  background: #0B4D99;
+  border-radius: 50%;
+  top: -1.5px;
+}
+
+#barra .barra .volumen {
+  position: relative;
+  width: 100px;
+  height: 2px;
+  background: #707070;
+  margin-left: 50px;
+}
+
+.volumen .bi {
+  position: absolute;
+  font-size: 20px;
+  color: #0B4D99;
+  top: -13px;
+  left: -30px;
+}
+
+.volumen input {
+  position: absolute;
+  width: 100%;
+  top: -7px;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+}
+
+.volumen .volumen-barra {
+  position: absolute;    
+  background: #0B4D99;
+  width: 50%;
+  height: 100%;
+  top: 0;
+}
+
+.volumen .punto {
+  position: absolute;    
+  width: 5px;
+  height: 5px;
+  background: #0B4D99;
+  border-radius: 50%;
+  top: -1.5px;
+}
