@@ -7,7 +7,7 @@
 // "Failed to load module script: Expected a JavaScript module script but the server responded with a MIME type of "text/css". Strict MIME type checking is enforced for module scripts per HTML spec."
 // y las canciones desaparecen de la lista, sin embargo cuando lo comento ese error desaparece y la lista de canciones vuelve a aparecer. 
 
-// tambien tengo problemas para lograr que las canciones puedan reproducirse al hacer click sobre cualquiera de ellas, no logro dar con la logica correcta para lograr eso
+// tambien tengo problemas para lograr que las canciones puedan reproducirse al hacer click sobre cualquiera de ellas, no logro dar con la logica correcta para llevar eso a cabo.
 
 
 
