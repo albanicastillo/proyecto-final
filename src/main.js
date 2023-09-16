@@ -1,4 +1,4 @@
-// import './style.css'
+import './style.css'
 
 
 
@@ -11,7 +11,8 @@
 
 
 
-
+// El error al importar el './style.css' fue porque moviste de lugar el main.js pero no el style.css
+// El segundo error fue porque importaste los estilos desde el HTML, en vite no debe ser así, debes hacerlo en este mismo archivo
 
 
 
@@ -23,37 +24,41 @@
 //     console.log(data)
 // }
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const elementoDOM = document.getElementById('track-list')
     const currentSong = document.getElementsByClassName('current')
     
-fetch ('https://leonardoapi.onrender.com/music')
-    .then( (res) => res.json())
-    .then( (data) => {
-        data.map( (song) => {
-            elementoDOM.innerHTML += `
-            <div class="playsong">
-            <div id="track-list">
-            <img src="${song.path.front}">
-            <div class="nm-art">
-                <h3 class="name">${song.title}</h3>
-                <h3 class="name">${song.author}</h3>
-                </div>
-            </div>
-            <i class="bi bi-heart-fill"></i>
-            </div>
-            `
+    fetch ('https://leonardoapi.onrender.com/music')
+        .then( (res) => res.json())
+        .then( (data) => {
+            data.map( (song) => {
+            //     elementoDOM.innerHTML += `
+            //     <div class="playsong">
+            //     <div id="track-list">
+            //     <img src="${song.path.front}">
+            //     <div class="nm-art">
+            //         <h3 class="name">${song.title}</h3>
+            //         <h3 class="name">${song.author}</h3>
+            //         </div>
+            //     </div>
+            //     <i class="bi bi-heart-fill"></i>
+            //     </div>
+            //     `
+                elementoDOM.appendChild(
+                    CardSong(song)
+                )
+            })
         })
-    })
     
-        const playsong = document.querySelector('.playsong');
-        playsong.addEventListener('click', () => {
-            console.log('Play a ' + 'song.title')
-        });
-        playsong.appendChild(elementoDOM)
+    // const playsong = document.querySelector('.playsong');
+    // playsong.addEventListener('click', () => {
+    //     console.log('Play a ' + 'song.title')
+    // });
+    // playsong.appendChild(elementoDOM)
 
-        return playsong
-      });
+    // return playsong
+});
     
   
       
@@ -63,26 +68,26 @@ fetch ('https://leonardoapi.onrender.com/music')
 
 
 
-export const CardSong = (song) => {
+const CardSong = (song) => {
     const container= document.createElement('div')
     container.classList.add('playsong')
-    container.innerHTML = `
-    <div class="playsong">
-    <div id="track-list">
-    <img src="${song.path.front}">
-    <div class="nm-art">
-        <h3 class="name">${song.title}</h3>
-        <h3 class="name">${song.author}</h3>
-        </div>
-    </div>
-    <i class="bi bi-heart-fill"></i>
-    </div>
-    `
+    // container.innerHTML = `
+    // <div class="playsong">
+    // <div id="track-list">
+    // <img src="${song.path.front}">
+    // <div class="nm-art">
+    //     <h3 class="name">${song.title}</h3>
+    //     <h3 class="name">${song.author}</h3>
+    //     </div>
+    // </div>
+    // <i class="bi bi-heart-fill"></i>
+    // </div>
+    // `
     
-    const containerButton = document.createElement('button')
+    const containerButton = document.createElement('div')
     containerButton.classList.add('playsong')
     
-    const playsong = document.createElement('button')
+    const playsong = document.createElement('div')
     playsong.classList.add('playsong')
     playsong.innerHTML = `<div class="playsong">
     <div id="track-list">
@@ -97,9 +102,8 @@ export const CardSong = (song) => {
         console.log('Play a ' + song.title)
     })
     
-    const buttonLike = document.createElement('button')
+    const buttonLike = document.createElement('div')
     buttonLike.classList.add('bi', 'bi-heart-fill')
-    buttonLike.innerHTML = `i`
     buttonLike.addEventListener('click', () => {
         console.log('Like a ' + song.title)
     })
@@ -107,10 +111,17 @@ export const CardSong = (song) => {
     containerButton.appendChild(playsong)
     containerButton.appendChild(buttonLike)
 
-    playsong.appendChild(containerButton)
+    // Aquí debiste meter el contenedor de los botones en el contenedor principal
+    // playsong.appendChild(containerButton)
+    container.appendChild(containerButton)
 
-    return playsong
+    // Tienes que retornar el contenedor
+    // return playsong
+    return container
 }
+
+
+
 
 
 

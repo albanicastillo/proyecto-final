@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de Música — Lista de reproducción</title>
-    <link rel="stylesheet" href="src/style.css">
+
+    <!-- Los estilos no deben enlazarse por acá, debe ser por el main.js -->
+    <!-- <link rel="stylesheet" href="src/style.css"> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Montserrat:wght@400;700&family=Poppins&family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
+
+
+
     <div class="container">
         <div class="header">
             <div class="navbar">
@@ -23,13 +29,15 @@
                         <h3>Buscar</h3>
                     </div>
                     <div class="me-gusta">
-                        <a href="megusta.html"><i class="bi bi-heart-fill"></i>
-                        <h3>Me gusta</h3>
+                        <a href="megusta.html">
+                            <i class="bi bi-heart-fill"></i>
+                            <h3>Me gusta</h3>
                         </a>                   
                     </div>
                     <div class="playlist">
-                        <a href="playlists-lists.html"><i class="bi bi-collection-fill"></i>
-                        <h3>Listas de reproducción</h3>
+                        <a href="playlists-lists.html">
+                            <i class="bi bi-collection-fill"></i>
+                            <h3>Listas de reproducción</h3>
                         </a>                    
                     </div>
                 </div>    
@@ -43,8 +51,11 @@
                                 <!-- <img src="">
                             <div class="nm-art">
                                 <h3 class="name"></h3>
-                                <h3 class="name"></h3> -->
+                                <h3 class="name"></h3>
                             </div>
+                             -->
+                             <!-- Aquí había una etiqueta mal cerrada, ya la corregí -->
+
                             </div>
                             <!-- <i class="bi bi-heart-fill"></i> -->
                         </div>
@@ -53,10 +64,10 @@
             </div>
             <div class="reproduccion">
                 <div class="current">
-                    <img src="https://leonardoapi.onrender.com/assets/music/img/theweeknd_blindinglights.jpg">
+                    <img src="" id="current-song-img">
                     <div class="song">
-                        <h3>Blinding Lights</h3>
-                        <h3 class="artist">The Weeknd</h3>
+                        <h3 id="current-song-title">Blinding Lights</h3>
+                        <h3 class="artist" id="current-song-author">The Weeknd</h3>
                     </div>
                     <i class="bi bi-heart-fill"></i>                        
                 </div>
@@ -64,7 +75,7 @@
                     <div class="botones">
                         <i class="bi bi-shuffle"></i>
                         <i class="bi bi-skip-start-fill"></i>
-                        <i class="bi bi-play-fill" id="masterPlay"></i>
+                        <i class="bi bi-play-fill bi bi-pause-fill" id="masterPlay"></i>
                         <i class="bi bi-skip-end-fill"></i>
                         <i class="bi bi-repeat"></i>
                     </div>
@@ -90,6 +101,6 @@
         </div>
     </div>
     <audio src="/"></audio> 
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
 </body>
 </html>
