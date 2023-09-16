@@ -99,13 +99,27 @@ const CardSong = (song) => {
     </div>
     </div>`
     playsong.addEventListener('click', () => {
+
+
+        // En este lugar de aquí vas a crear la función para poner la canción
+        // Recuerda que hay un código de ejemplo con Typescript
+        // Te dejo el enlace ---> https://github.com/leonardotorre18/proyecto_final_modulo_1
+        // En especifico te dejo el código para reproducir la canción
+        // Este es el código ---> https://github.com/leonardotorre18/proyecto_final_modulo_1/blob/master/src/components/CurrentSong.ts
+
         console.log('Play a ' + song.title)
+
+
     })
     
     const buttonLike = document.createElement('div')
     buttonLike.classList.add('bi', 'bi-heart-fill')
     buttonLike.addEventListener('click', () => {
+
+
         console.log('Like a ' + song.title)
+
+
     })
     
     containerButton.appendChild(playsong)
