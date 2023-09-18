@@ -32,7 +32,7 @@
   line-height: 40px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: .3s linear;
+  transition: .2s linear;
   color: transparent;
   -webkit-text-stroke: 1px #B70F19;
 }
